@@ -1,0 +1,57 @@
+{
+    "name": "cosmomathieu/michelin-dev-petstore",
+    "description": "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about Swagger at [http://swagger.io](http://swagger.io). In the third iteration of the pet store, we've switched to the design first approach! You can now help us improve the API whether it's by making changes to the definition itself or to the code. That way, with time, we can improve the API in general, and expose some of the new features in OAS3.  Some useful links: - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore) - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)",
+    "type": "library",
+    "keywords": [
+        "michelin-dev-petstore",
+        "API",
+        "SDK"
+    ],
+    "homepage": "https://www.apimatic.io",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "APIMatic Code Generator",
+            "email": "support@apimatic.io",
+            "homepage": "https://www.apimatic.io",
+            "role": "API Tool"
+        }
+    ],
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "ext-json": "*",
+        "apimatic/unirest-php": "^4.0.0",
+        "apimatic/core-interfaces": "~0.1.0",
+        "apimatic/core": "~0.3.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5",
+        "phan/phan": "5.4.2",
+        "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "MichelinDevPetstoreLib\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MichelinDevPetstoreLib\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html=coverage",
+        "lint-src": "phpcs --standard=phpcs-ruleset.xml src/",
+        "lint-src-fix": "phpcbf --standard=phpcs-ruleset.xml src/",
+        "lint-tests": "phpcs --standard=phpcs-ruleset.xml tests/",
+        "lint-tests-fix": "phpcbf --standard=phpcs-ruleset.xml tests/",
+        "analyze": "phan --allow-polyfill-parser",
+        "lint": [
+            "@lint-src",
+            "@lint-tests"
+        ]
+    }
+}
